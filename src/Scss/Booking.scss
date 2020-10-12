@@ -1,0 +1,193 @@
+$yellow: rgb(255, 217, 0);
+
+.booking{
+  display: flex;
+  justify-content: space-between;
+  .right-part{
+   
+  }
+  .left-part, .right-part{
+    height: 100vh;
+    position: relative;
+    width: 25%;
+  }
+  .center-part{
+    width: 50%;
+    height: 100vh;
+    position: relative;
+  }
+}
+.content-date-picker{
+  margin-top: 10rem;
+}
+.date-picker{
+  display: flex;
+  align-items: center;
+  .date{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    &.active{
+      border: 2px solid $yellow;
+      padding: 9px;
+      border-radius: 1rem;
+      box-shadow: 0 0 5px $yellow;
+    }
+    .date-day{
+      font-size: 12px;
+    }
+  }
+}
+.content-block{
+  margin-bottom: 15px;
+}
+
+.times{
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  div{
+    margin-right: 15px;
+    cursor: pointer;
+    &.active{
+      border: 2px solid $yellow;
+      padding: 4px 9px;
+      border-radius: 1rem;
+      box-shadow: 0 0 5px $yellow;
+    }
+  }
+}
+
+h2{
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.info-movie{
+  margin-top: 30px;
+  img{
+    width: 200px;
+  }
+}
+
+.movie-theater{
+  
+  .screen{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 5rem;
+    z-index: 2;
+  }
+  .places{
+    position: relative;
+    top: 15rem;
+    .lignes{
+      display: flex;
+      justify-content: center;
+      
+    }
+  }
+}
+
+.seats{
+  width: 17px;
+  height: 17px;
+  background: rgb(107, 107, 107);
+  margin: 15px 10px;
+  border-radius: 0.1rem;
+  position: relative;
+  cursor: pointer;
+  &.desable{
+    pointer-events: none;
+    background: rgb(44, 44, 44);
+    &::before{
+      content: '';
+      position: absolute;
+      border-left: 4px solid rgb(44, 44, 44);
+      border-bottom: 3px solid rgb(44, 44, 44);
+      border-right: 4px solid rgb(44, 44, 44);
+     
+    }
+  }
+  &.active{
+    background:$yellow;
+    &::before{
+      content: '';
+      position: absolute;
+      border-left: 4px solid $yellow;
+      border-bottom: 3px solid $yellow;
+      border-right: 4px solid $yellow;
+      border-radius: 0.1rem;
+      width: 22.5px;
+      height: 21px;
+      background: rgba(255, 0, 0, 0);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%)
+    }
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    border-left: 4px solid  rgb(107, 107, 107);
+    border-bottom: 3px solid  rgb(107, 107, 107);
+    border-right: 4px solid  rgb(107, 107, 107);
+    border-radius: 0.1rem;
+    width: 22.5px;
+    height: 21px;
+    background: rgba(255, 0, 0, 0);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+}
+
+.ticket{
+  position: absolute;
+  right: 0;
+  margin-top: 10rem;
+  .info{
+    width: 308px;
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    text-align: center;
+    h2{
+      margin-top: 4rem;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    .date{
+      span{
+        margin-right: 5px;
+      }
+    }
+    .timetable{
+      margin-top: 30px;
+    }
+    .seats-selected{
+      width: 70%;
+      background: black;
+      margin: 0 auto;
+      margin-top: 30px;
+      p{
+        padding: 8px 0;
+      }
+    }
+    .warning{
+      display: block;
+      padding-top: 30px;
+      font-size: 12px;
+      color: $yellow;
+    }
+  }
+  img{
+    opacity: 0.3;
+  }
+}
